@@ -1,0 +1,21 @@
+#+STARTUP: latexpreview
+#+NAME: reese
+
+#+BEGIN_SRC haskell
+module NumberTheory
+( summation
+) where
+
+summation :: Num a => [a] -> a
+summation [] = 0
+summation (x:xs) = x + summation xs
+#+END_SRC
+
+the geometric progression, with the sum defined as
+$\sum_{j}^n ar^j$
+#+BEGIN_SRC haskell
+  createGeometricProgression :: (Floating x, Integral y) => x -> x -> y -> y -> [x]
+  createGeometricProgression a r j n
+    | n < j = []
+    | n >= j = [a * (r ** (fromIntegral j))] ++ (createGeometricProgression a r (j+1) n)
+#+END_SRC
