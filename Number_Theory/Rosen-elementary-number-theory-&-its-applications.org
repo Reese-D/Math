@@ -13,9 +13,18 @@ summation (x:xs) = x + summation xs
 
 the geometric progression, with the sum defined as
 $\sum_{j}^n ar^j$
+#+BEGIN_SRC haskell :exports both
+createGeometricProgression :: (Floating x, Integral y) => (x -> x) -> y -> y -> [x]
+createGeometricProgression f j n
+  | n < j = []
+  | n >= j = (f j) ++ (createGeometricProgression f (j+1) n)
+#+END_SRC
+
+binomial coefficient
 #+BEGIN_SRC haskell
-  createGeometricProgression :: (Floating x, Integral y) => x -> x -> y -> y -> [x]
-  createGeometricProgression a r j n
+  productList :: (Floating x, Integral y) => x -> x -> y -> y -> [x]
+  productList a r j n
     | n < j = []
-    | n >= j = [a * (r ** (fromIntegral j))] ++ (createGeometricProgression a r (j+1) n)
+    | n >= j = 
+        binomialCoefficient :: Num x => x -> x -> x  
 #+END_SRC

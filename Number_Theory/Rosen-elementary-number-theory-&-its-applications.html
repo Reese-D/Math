@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-01-10 Tue 14:31 -->
+<!-- 2023-01-10 Tue 14:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,16 +233,28 @@ the geometric progression, with the sum defined as
 \(\sum_{j}^n ar^j\)
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #fabd2f;">createGeometricProgression</span> <span style="color: #83a598;">::</span> <span style="color: #2666a1a0a766;">(</span><span style="color: #d3869b; font-weight: bold;">Floating</span> x, <span style="color: #d3869b; font-weight: bold;">Integral</span> y<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">=&gt;</span> x <span style="color: #83a598;">-&gt;</span> x <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> <span style="color: #2666a1a0a766;">[</span>x<span style="color: #2666a1a0a766;">]</span>
-<span style="color: #fabd2f;">createGeometricProgression</span> a r j n
+<pre class="src src-haskell"><span style="color: #fabd2f;">createGeometricProgression</span> <span style="color: #83a598;">::</span> <span style="color: #2666a1a0a766;">(</span><span style="color: #d3869b; font-weight: bold;">Floating</span> x, <span style="color: #d3869b; font-weight: bold;">Integral</span> y<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">=&gt;</span> <span style="color: #2666a1a0a766;">(</span>x <span style="color: #83a598;">-&gt;</span> x<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> <span style="color: #2666a1a0a766;">[</span>x<span style="color: #2666a1a0a766;">]</span>
+<span style="color: #fabd2f;">createGeometricProgression</span> f j n
   <span style="color: #83a598;">|</span> n <span style="color: #83a598;">&lt;</span> j <span style="color: #83a598;">=</span> <span style="color: #2666a1a0a766; font-weight: bold;">[]</span>
-  <span style="color: #83a598;">|</span> n <span style="color: #83a598;">&gt;=</span> j <span style="color: #83a598;">=</span> <span style="color: #2666a1a0a766;">[</span>a <span style="color: #83a598;">*</span> <span style="color: #d5143efe8363;">(</span>r <span style="color: #83a598;">**</span> <span style="color: #80ceddf65f45;">(</span>fromIntegral j<span style="color: #80ceddf65f45;">)</span><span style="color: #d5143efe8363;">)</span><span style="color: #2666a1a0a766;">]</span> <span style="color: #83a598;">++</span> <span style="color: #2666a1a0a766;">(</span>createGeometricProgression a r <span style="color: #d5143efe8363;">(</span>j<span style="color: #83a598;">+</span>1<span style="color: #d5143efe8363;">)</span> n<span style="color: #2666a1a0a766;">)</span>
+  <span style="color: #83a598;">|</span> n <span style="color: #83a598;">&gt;=</span> j <span style="color: #83a598;">=</span> <span style="color: #2666a1a0a766;">(</span>f j<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">++</span> <span style="color: #2666a1a0a766;">(</span>createGeometricProgression a r <span style="color: #d5143efe8363;">(</span>j<span style="color: #83a598;">+</span>1<span style="color: #d5143efe8363;">)</span> n<span style="color: #2666a1a0a766;">)</span>
+</pre>
+</div>
+
+<p>
+binomial coefficient
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #fabd2f;">productList</span> <span style="color: #83a598;">::</span> <span style="color: #2666a1a0a766;">(</span><span style="color: #d3869b; font-weight: bold;">Floating</span> x, <span style="color: #d3869b; font-weight: bold;">Integral</span> y<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">=&gt;</span> x <span style="color: #83a598;">-&gt;</span> x <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> <span style="color: #2666a1a0a766;">[</span>x<span style="color: #2666a1a0a766;">]</span>
+<span style="color: #fabd2f;">productList</span> a r j n
+  <span style="color: #83a598;">|</span> n <span style="color: #83a598;">&lt;</span> j <span style="color: #83a598;">=</span> <span style="color: #2666a1a0a766; font-weight: bold;">[]</span>
+  <span style="color: #83a598;">|</span> n <span style="color: #83a598;">&gt;=</span> j <span style="color: #83a598;">=</span> 
+      binomialCoefficient <span style="color: #83a598;">::</span> <span style="color: #d3869b; font-weight: bold;">Num</span> x <span style="color: #83a598;">=&gt;</span> x <span style="color: #83a598;">-&gt;</span> x <span style="color: #83a598;">-&gt;</span> x  
 </pre>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: reese</p>
-<p class="date">Created: 2023-01-10 Tue 14:31</p>
+<p class="date">Created: 2023-01-10 Tue 14:42</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
