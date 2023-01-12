@@ -155,7 +155,7 @@ problem_1_1_4 = do
 *** Problem 5
 Tower of Hanoi!
 
-After playing around with the tower of hanoi online and trying to view it through a recursive perspective, I noticed a few rules
+After playing around with the tower of hanoi online (https://www.mathsisfun.com/games/towerofhanoi.html) and trying to view it through a recursive perspective, I noticed a few rules
 1) the base case of one ring can just be to move the ring to whichever position you want
 2) Tower of hanoi is a recursive problem, you need to move the current ring to the destination, and the entire stack on top of the current ring to an empty post
 3) After 2 is complete, you have to move that substack back onto the current ring
