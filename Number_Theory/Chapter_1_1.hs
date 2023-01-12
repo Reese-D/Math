@@ -1,11 +1,9 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
-module NumberTheory
+module Chapter1_1
 ( summation
 ) where
 import System.IO
-
-
 
 --1.1 helper functions
 summation :: Num a => [a] -> a
@@ -48,7 +46,7 @@ getSize :: ListAndSize x -> Int
 getSize (ListAndSize xs y) = y
 
 getListAndSize :: [x] -> ListAndSize x
-getListAndSize xs = ListAndSize xs (length xs)
+getListAndSize xs = ListAndSize xs ((length xs) - 1)
 
 
 --for problem 1.1.5
@@ -98,10 +96,9 @@ problem_1_1_3 = do
 problem_1_1_4 :: IO ()
 problem_1_1_4 = do
   let numRows = rangeI 0 10
-  let triangle = map range numRows
+  let triangle = map (rangeI 0) numRows
   let listSizeTriangle = map getListAndSize triangle
-  let missingFirstNumber = map mapInner listSizeTriangle
-  let pascalsTriangle = map ([1.0] ++) missingFirstNumber
+  let pascalsTriangle = map mapInner listSizeTriangle
   mapM_ print pascalsTriangle
   where
     mapInner (ListAndSize xs y) = map (binomialCoefficient y) xs
