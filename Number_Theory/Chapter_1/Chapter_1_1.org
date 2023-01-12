@@ -204,6 +204,7 @@ problem_1_1_5 = do
 
 #+END_SRC
 
+*** Problem 6
 See the binomial theorem below
 $(x + y)^n = \sum_{j=0}^n \binom{n}{j} x^{(n-j)} y^j$
 
@@ -221,7 +222,7 @@ $y^j$
 since it's a sum I represent each summation piece in a list. The three above parts are all multiplied together.
 
 Finally I show the resultant sum as evidence the summation list is correct. (3+7)^5 = 100000
-*** Problem 6
+
 #+BEGIN_SRC haskell
 
       --Expand (x+y)^n, where n is a positive integer using the binomial theorem
