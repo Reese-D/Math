@@ -73,6 +73,14 @@ $\binom{m}{k} = \frac{m!}{k!(m-k)!}$
 ** Coding solutions
 
 *** problem 1
+the createProgression helper function applies a given function (geometric 1 2) on a range of numbers from (1) to (5) in this example. You can find them defined in the helpers section
+
+The "geometric" summation function is defined as:
+$\sum_{j}^n ar^j$
+
+Our progression is just a list of the equation $ar^j$ where a = 1, r = 2, and with j values of 1 through 5.
+
+Then we simply sum up the progression at the end.
 #+BEGIN_SRC haskell
 
       --- PROBLEMS 1.1
@@ -86,6 +94,7 @@ $\binom{m}{k} = \frac{m!}{k!(m-k)!}$
 #+END_SRC
 
 *** Problem 2
+See the factorial helper function. This is pretty simple and I don't think it needs much explanation, it's just a list of numbers from 1 to n all multiplied together
 #+BEGIN_SRC haskell
 
       --Evaluate n!
@@ -98,6 +107,7 @@ $\binom{m}{k} = \frac{m!}{k!(m-k)!}$
 #+END_SRC
 
 *** Problem 3
+see the binomial coefficient helper function. It's a fairly straightforward math equation again so I won't add much explanation
 #+BEGIN_SRC haskell
 
       --Evaluate binomial coefficients

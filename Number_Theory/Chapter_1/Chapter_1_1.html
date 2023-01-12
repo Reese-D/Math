@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-01-12 Thu 16:02 -->
+<!-- 2023-01-12 Thu 16:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -221,17 +221,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge3b4a05">1. Chapter 1.1</a>
+<li><a href="#org41f79c4">1. Chapter 1.1</a>
 <ul>
-<li><a href="#org78fb0d7">1.1. Helper functions</a></li>
-<li><a href="#org42ec3ca">1.2. Coding solutions</a>
+<li><a href="#org01f90e4">1.1. Helper functions</a></li>
+<li><a href="#org588ab2c">1.2. Coding solutions</a>
 <ul>
-<li><a href="#org428cedc">1.2.1. problem 1</a></li>
-<li><a href="#org28ddd12">1.2.2. Problem 2</a></li>
-<li><a href="#org8814a6d">1.2.3. Problem 3</a></li>
-<li><a href="#org879f4c0">1.2.4. Problem 4</a></li>
-<li><a href="#org7efe513">1.2.5. Problem 5</a></li>
-<li><a href="#orge9811b8">1.2.6. Problem 6</a></li>
+<li><a href="#org3a9158a">1.2.1. problem 1</a></li>
+<li><a href="#org4eb1257">1.2.2. Problem 2</a></li>
+<li><a href="#org4037150">1.2.3. Problem 3</a></li>
+<li><a href="#orgee0f076">1.2.4. Problem 4</a></li>
+<li><a href="#orge99fe3b">1.2.5. Problem 5</a></li>
+<li><a href="#org6bccc33">1.2.6. Problem 6</a></li>
 </ul>
 </li>
 </ul>
@@ -240,12 +240,12 @@
 </div>
 </div>
 
-<div id="outline-container-orge3b4a05" class="outline-2">
-<h2 id="orge3b4a05"><span class="section-number-2">1.</span> Chapter 1.1</h2>
+<div id="outline-container-org41f79c4" class="outline-2">
+<h2 id="org41f79c4"><span class="section-number-2">1.</span> Chapter 1.1</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org78fb0d7" class="outline-3">
-<h3 id="org78fb0d7"><span class="section-number-3">1.1.</span> Helper functions</h3>
+<div id="outline-container-org01f90e4" class="outline-3">
+<h3 id="org01f90e4"><span class="section-number-3">1.1.</span> Helper functions</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #fabd2f;">createGeometricProgression</span> <span style="color: #83a598;">::</span> <span style="color: #2666a1a0a766;">(</span><span style="color: #d3869b; font-weight: bold;">Floating</span> x, <span style="color: #d3869b; font-weight: bold;">Integral</span> y<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">=&gt;</span> <span style="color: #2666a1a0a766;">(</span>x <span style="color: #83a598;">-&gt;</span> x<span style="color: #2666a1a0a766;">)</span> <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> y <span style="color: #83a598;">-&gt;</span> <span style="color: #2666a1a0a766;">[</span>x<span style="color: #2666a1a0a766;">]</span>
@@ -334,13 +334,29 @@ Binomail Coefficients
 </div>
 </div>
 
-<div id="outline-container-org42ec3ca" class="outline-3">
-<h3 id="org42ec3ca"><span class="section-number-3">1.2.</span> Coding solutions</h3>
+<div id="outline-container-org588ab2c" class="outline-3">
+<h3 id="org588ab2c"><span class="section-number-3">1.2.</span> Coding solutions</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-org428cedc" class="outline-4">
-<h4 id="org428cedc"><span class="section-number-4">1.2.1.</span> problem 1</h4>
+<div id="outline-container-org3a9158a" class="outline-4">
+<h4 id="org3a9158a"><span class="section-number-4">1.2.1.</span> problem 1</h4>
 <div class="outline-text-4" id="text-1-2-1">
+<p>
+the createProgression helper function applies a given function (geometric 1 2) on a range of numbers from (1) to (5) in this example. You can find them defined in the helpers section
+</p>
+
+<p>
+The "geometric" summation function is defined as:
+\(\sum_{j}^n ar^j\)
+</p>
+
+<p>
+Our progression is just a list of the equation \(ar^j\) where a = 1, r = 2, and with j values of 1 through 5.
+</p>
+
+<p>
+Then we simply sum up the progression at the end.
+</p>
 <div class="org-src-container">
 <pre class="src src-haskell">
 <span style="color: #616e88;">--</span><span style="color: #7c6f64;">- PROBLEMS 1.1</span>
@@ -356,9 +372,12 @@ Binomail Coefficients
 </div>
 </div>
 
-<div id="outline-container-org28ddd12" class="outline-4">
-<h4 id="org28ddd12"><span class="section-number-4">1.2.2.</span> Problem 2</h4>
+<div id="outline-container-org4eb1257" class="outline-4">
+<h4 id="org4eb1257"><span class="section-number-4">1.2.2.</span> Problem 2</h4>
 <div class="outline-text-4" id="text-1-2-2">
+<p>
+See the factorial helper function. This is pretty simple and I don't think it needs much explanation, it's just a list of numbers from 1 to n all multiplied together
+</p>
 <div class="org-src-container">
 <pre class="src src-haskell">
 <span style="color: #616e88;">--</span><span style="color: #7c6f64;">Evaluate n!</span>
@@ -373,9 +392,12 @@ Binomail Coefficients
 </div>
 </div>
 
-<div id="outline-container-org8814a6d" class="outline-4">
-<h4 id="org8814a6d"><span class="section-number-4">1.2.3.</span> Problem 3</h4>
+<div id="outline-container-org4037150" class="outline-4">
+<h4 id="org4037150"><span class="section-number-4">1.2.3.</span> Problem 3</h4>
 <div class="outline-text-4" id="text-1-2-3">
+<p>
+see the binomial coefficient helper function. It's a fairly straightforward math equation again so I won't add much explanation
+</p>
 <div class="org-src-container">
 <pre class="src src-haskell">
 <span style="color: #616e88;">--</span><span style="color: #7c6f64;">Evaluate binomial coefficients</span>
@@ -391,8 +413,8 @@ Binomail Coefficients
 </div>
 </div>
 
-<div id="outline-container-org879f4c0" class="outline-4">
-<h4 id="org879f4c0"><span class="section-number-4">1.2.4.</span> Problem 4</h4>
+<div id="outline-container-orgee0f076" class="outline-4">
+<h4 id="orgee0f076"><span class="section-number-4">1.2.4.</span> Problem 4</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 we'll need a few helpers for this, ListAndSize can be though of as a tuple of a list and its corresponding length
@@ -432,8 +454,8 @@ The final step is to simply create a binomial coefficient out of each item. for 
 </div>
 </div>
 
-<div id="outline-container-org7efe513" class="outline-4">
-<h4 id="org7efe513"><span class="section-number-4">1.2.5.</span> Problem 5</h4>
+<div id="outline-container-orge99fe3b" class="outline-4">
+<h4 id="orge99fe3b"><span class="section-number-4">1.2.5.</span> Problem 5</h4>
 <div class="outline-text-4" id="text-1-2-5">
 <p>
 Tower of Hanoi!
@@ -530,8 +552,8 @@ Finally I show the resultant sum as evidence the summation list is correct. (3+7
 </p>
 </div>
 </div>
-<div id="outline-container-orge9811b8" class="outline-4">
-<h4 id="orge9811b8"><span class="section-number-4">1.2.6.</span> Problem 6</h4>
+<div id="outline-container-org6bccc33" class="outline-4">
+<h4 id="org6bccc33"><span class="section-number-4">1.2.6.</span> Problem 6</h4>
 <div class="outline-text-4" id="text-1-2-6">
 <div class="org-src-container">
 <pre class="src src-haskell">
@@ -588,7 +610,7 @@ Finally I show the resultant sum as evidence the summation list is correct. (3+7
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: reese</p>
-<p class="date">Created: 2023-01-12 Thu 16:02</p>
+<p class="date">Created: 2023-01-12 Thu 16:14</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
